@@ -1,0 +1,39 @@
+package compatibility;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CompatibilityTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","E:\\W_DETAILS\\Automation\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://jt-dev.azurewebsites.net/#/SignUp");
+	
+		driver.findElement(By.xpath("//span[ contains(text(),'English') ]")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.name("name")).sendKeys("pradnya sadigale");
+		Thread.sleep(3000);
+		
+		driver.findElement(By.id("orgName")).sendKeys("pradnya");
+		Thread.sleep(3000);
+		
+		 driver.findElement(By.id("singUpEmail")).sendKeys("pradnyasadigale8@gmail.com");
+		 Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//span[@class='black-color ng-binding']")).click();
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class='btn btn-custom btn-block ng-binding']")).click();		
+		
+		
+	}
+
+}
+
